@@ -3,7 +3,6 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductController;
 
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -32,8 +31,4 @@ Route::get('/info', function () {
 });
 Route::get('/matches', function () {
     return view('matches');
-});
-Route::prefix('admin')->group(function () {
-    Route::get('/products/create', [ProductController::class, 'create'])->name('admin.products.create');
-    Route::post('/products', [ProductController::class, 'store'])->name('admin.products.store');
 });
