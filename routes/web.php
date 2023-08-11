@@ -31,3 +31,9 @@ Route::get('/info', function () {
 Route::get('/matches', function () {
     return view('matches');
 });
+// Correct namespace structure
+Route::get('/add-product', 'App\Http\Controllers\ProductController@create')->name('store-product');
+Route::post('/add-product', 'App\Http\Controllers\ProductController@store')->name('store-product');
+
+
+

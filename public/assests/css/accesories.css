@@ -4,8 +4,13 @@
 .card-container {
     position: relative;
     margin-top: 100px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; /* Adjust this as needed */
 }
 .product-card {
+  width: calc(25% - 20px); /* Adjust width as needed */
+    margin-bottom: 20px;
     width: 300px;
     background-color: rgb(26, 29, 27);
     color: #ffffff;
