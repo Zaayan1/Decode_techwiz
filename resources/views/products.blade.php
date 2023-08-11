@@ -43,9 +43,9 @@
   <div id="cartModal" class="modal">
     <div class="modal-content">
       <span class="close" onclick="closeModal()">&times;</span>
-      <img class="modal-product-image" src="assests/images/person_2.jpg" alt="Product Image">
-      <p class="modal-product-title">Product Name</p>
-      <p class="modal-product-price">$XX.XX</p> <!-- Placeholder for the price -->
+      <img class="modal-product-image" src="{{ asset($product->image) }}" alt="Product Image">
+      <p class="modal-product-title">{{ $product->name }}</p>
+      <p class="modal-product-price">${{ $product->price }}</p> <!-- Placeholder for the price -->
       <div class="quantity-container">
         <label for="quantity">Quantity:</label>
         <input type="number" id="quantity" value="1" min="1" onchange="updateTotalPrice(229)">

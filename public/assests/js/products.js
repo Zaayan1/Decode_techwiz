@@ -99,3 +99,36 @@
 
         closeModal(); // Close the modal after performing the action
     }  
+    // Function to fetch products from the database API
+async function fetchProducts() {
+    try {
+        const response = await fetch('/api/products'); // Replace with your API endpoint
+        const products = await response.json();
+        return products;
+    } catch (error) {
+        console.error('Error fetching products:', error);
+        return [];
+    }
+}
+
+// Call fetchProducts and update product cards accordingly
+async function updateProductCards(category) {
+    const products = await fetchProducts();
+
+    var productCardContainer = document.getElementById('productCardContainer');
+    productCardContainer.innerHTML = ''; // Clear existing product cards
+
+    if (category === 'all') {
+        products.forEach(function (product) {
+            createProductCard(product);
+        });
+    } else {
+        products.forEach(function (product) {
+            if (product.category === category) {
+                createProductCard(product);
+            }
+        });
+    }
+}
+
+// ... rest of the code remains the same ...
