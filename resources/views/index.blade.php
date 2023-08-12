@@ -116,7 +116,7 @@
                   <h3 class="mb-3">Dogba set for Juvendu return?</h3>
                   <div class="author d-flex align-items-center">
                     <div class="assests/img mb-2 mr-3">
-                      <img src="assests/images/person_1.jpg" alt="">
+                     
                     </div>
                     <div class="text">
                       <h4>Mellissa Allison</h4>

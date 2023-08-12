@@ -49,16 +49,16 @@
       <div class="container">
         <div class="d-flex align-items-center">
           <div class="site-logo">
-            <a href="index">
+            <a href="/">
               <img src="assests/images/logo.png" alt="Logo">
             </a>
           </div>
           <div class="ml-auto">
             <nav class="site-navigation position-relative text-right" role="navigation">
               <ul class="site-menu main-menu js-clone-nav mr-auto d-none d-lg-block">
-                <li class="active"><a href="index" class="nav-link">Home</a></li>
+                <li class="active"><a href="/" class="nav-link">Home</a></li>
                 <li><a href="info" class="nav-link">Soccer Info</a></li>
-                <li><a href="accesories" class="nav-link">Accesories</a></li>
+                <li><a href="products" class="nav-link">Accesories</a></li>
                 <li><a href="matches" class="nav-link">Matches</a></li>
                 <li><a href="players" class="nav-link">Players</a></li>
                 <li><a href="index#top-scores" class="nav-link">Top Scores</a></li>
