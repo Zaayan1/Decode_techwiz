@@ -97,13 +97,13 @@ Route::get('/playergallery-admin', function () {
 });
 
 
-<<<<<<< Updated upstream
+
 Route::get('/matches-admin', function () {
     return view('matches-admin');
 });
 // admin routes endpoint
 
-=======
+
 Route::middleware('auth')->group(function () {
     Route::get('/carts', 'CartController@viewCart')->name('carts.index');
     Route::post('/carts/add/{productId}', 'CartController@addToCart')->name('carts.add');
@@ -126,4 +126,3 @@ Route::middleware(['auth', 'admin'])->prefix('admin')->group(function () {
 });
 Route::get('/contact', 'ContactController@showForm')->name('contact.form');
 Route::post('/contact', 'ContactController@submitForm')->name('contact.submit');
->>>>>>> Stashed changes
