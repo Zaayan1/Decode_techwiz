@@ -19,6 +19,8 @@ return new class extends Migration
         $table->date('order_date');
         $table->date('delivery_date');
         $table->timestamps();
+        $table->string('status')->default('pending');
+
 
     });
     }

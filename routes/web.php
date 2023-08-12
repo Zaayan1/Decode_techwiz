@@ -97,8 +97,33 @@ Route::get('/playergallery-admin', function () {
 });
 
 
+<<<<<<< Updated upstream
 Route::get('/matches-admin', function () {
     return view('matches-admin');
 });
 // admin routes endpoint
 
+=======
+Route::middleware('auth')->group(function () {
+    Route::get('/carts', 'CartController@viewCart')->name('carts.index');
+    Route::post('/carts/add/{productId}', 'CartController@addToCart')->name('carts.add');
+    Route::delete('/carts/remove/{cartItemId}', 'CartController@removeFromCart')->name('carts.remove');
+    Route::post('/carts/checkout', 'CartController@checkout')->name('carts.checkout');
+});
+
+Route::middleware(['auth', 'admin'])->prefix('admin')->group(function () {
+    // ...
+    Route::get('/carts', 'Admin\AdminCartController@viewUserCarts')->name('admin.carts.index');
+});
+Route::middleware(['auth', 'admin'])->prefix('admin')->group(function () {
+    // ...
+    Route::post('/orders/cancel/{orderId}', 'Admin\AdminOrderController@cancelOrder')->name('admin.orders.cancel');
+});
+
+Route::middleware(['auth', 'admin'])->prefix('admin')->group(function () {
+    // ...
+    Route::resource('feedbacks', 'Admin\AdminFeedbackController');
+});
+Route::get('/contact', 'ContactController@showForm')->name('contact.form');
+Route::post('/contact', 'ContactController@submitForm')->name('contact.submit');
+>>>>>>> Stashed changes
