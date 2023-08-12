@@ -10,12 +10,12 @@
 <body style="display:flex; align-items:center; justify-content:center;">
 <div class="login-page">
   <div class="form">
-    <form class="register-form" method="POST" action="save.php">
+    <form class="register-form" method="POST" action="{{ route('register') }}">
       <h2>Register</h2>
-      <input type="text" name="fullname" placeholder="Full Name *" required/>
-      <input type="text" name="username" placeholder="Username *" required/>
-      <input type="email" name="email" placeholder="Email *" required/>
-      <input type="password" name="pass" placeholder="Password *" required/>
+      <input type="text" name="name" placeholder="Full Name *" required/>
+      <input type="email" name="email" name placeholder="Email *" required/>
+      <input type="password" name="password" placeholder="Password *" required/>
+      <input type="password" name="password_confirmation" placeholder="Confirm Password *" required/>
       <button type="submit" class="btn">
         <span></span>
         <span></span>
@@ -27,8 +27,8 @@
     </form>
     <form class="login-form" method="post" action="savedata.php">
       <h2></i> Login</h2>
-      <input type="text" name="username" placeholder="Username" required />
-      <input type="password" name="pass" placeholder="Password" required/>
+      <input type="text" name="email" placeholder="email" required />
+      <input type="password" name="password" placeholder="Password" required/>
       <button type="submit" class="btn">
         <span></span>
         <span></span>
