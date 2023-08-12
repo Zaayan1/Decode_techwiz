@@ -35,7 +35,26 @@ Route::get('/matches', function () {
 Route::get('/add-product', 'App\Http\Controllers\ProductController@create')->name('store-product');
 Route::post('/add-product', 'App\Http\Controllers\ProductController@store')->name('store-product');
 
+Route::get('/register', 'App\Http\Controllers\RegisterController@showRegistrationForm')->name('register');
+Route::post('/register', 'App\Http\Controllers\RegisterController@register');
+
+Route::get('/login', 'Auth\LoginController@showLoginForm')->name('login');
+Route::post('/login', 'Auth\LoginController@login');
+
+Route::resource('soccerinfo', 'SoccerinfoController');
+
+Route::resource('soccerinfo', 'SoccerinfoController');
+
+Route::middleware(['auth', 'admin'])->prefix('admin')->group(function () {
+    Route::resource('players', 'Admin\AdminPlayerController');
+});
 
 
+Route::middleware(['auth', 'admin'])->prefix('admin')->group(function () {
+    Route::resource('players', 'Admin\AdminPlayerController');
+    Route::resource('teams', 'Admin\AdminTeamController');
+    Route::resource('matches', 'Admin\AdminMatchController');
+    Route::resource('statistics', 'Admin\AdminStatisticController');
+});
 
 

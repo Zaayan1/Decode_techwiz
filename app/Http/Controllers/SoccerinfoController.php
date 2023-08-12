@@ -46,14 +46,22 @@ class SoccerinfoController extends Controller
      */
     public function show(string $id)
     {
-        $soccerinfo = Soccerinfo::findOrFail($id);
-        return view('soccerinfo.edit', compact('soccerinfo'));
+       
     }
 
     /**
      * Show the form for editing the specified resource.
      */
     public function edit(string $id)
+    {
+        $soccerinfo = Soccerinfo::findOrFail($id);
+        return view('soccerinfo.edit', compact('soccerinfo'));
+    }
+
+    /**
+     * Update the specified resource in storage.
+     */
+    public function update(Request $request, string $id)
     {
         // Validate and update the soccerinfo
         $soccerinfo = Soccerinfo::findOrFail($id);
@@ -62,14 +70,7 @@ class SoccerinfoController extends Controller
         $soccerinfo->images = $request->images;
         $soccerinfo->videos = $request->videos;
         $soccerinfo->save();
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, string $id)
-    {
-        //
+        return redirect()->route('soccerinfo.index')->with('success', 'Soccer Info updated successfully.');
     }
 
     /**
@@ -77,6 +78,9 @@ class SoccerinfoController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $soccerinfo = Soccerinfo::findOrFail($id);
+        $soccerinfo->delete();
+
+        return redirect()->route('soccerinfo.index')->with('success', 'Soccer Info deleted successfully.');
     }
 }
