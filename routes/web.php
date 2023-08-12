@@ -18,7 +18,7 @@ use App\Http\Controllers\ProductController;
 Route::get('/', function () {
     return view('index');
 });
-Route::get('/login', function () {
+Route::get('/forms', function () {
     return view('forms');
 });
 Route::get('/products', [ProductController::class, 'index']);
@@ -59,5 +59,46 @@ Route::middleware(['auth', 'admin'])->prefix('admin')->group(function () {
     Route::resource('matches', 'Admin\AdminMatchController');
     Route::resource('statistics', 'Admin\AdminStatisticController');
 });
+// admin routes
+Route::get('/index-admin', function () {
+    return view('index-admin');
+});
 
+Route::get('/soccerinfo-admin', function () {
+    return view('soccerinfo-admin');
+});
+
+Route::get('/statistics-admin', function () {
+    return view('statistics-admin');
+});
+
+Route::get('/newsupdate-admin', function () {
+    return view('/newsupdate-admin');
+});
+
+Route::get('/myprofile-admin', function () {
+    return view('myprofile-admin');
+});
+
+Route::get('/top10score-admin', function () {
+    return view('top10score-admin');
+});
+
+Route::get('/setting-admin', function () {
+    return view('setting-admin');
+});
+
+Route::get('/chart-admin', function () {
+    return view('chart-admin');
+});
+
+Route::get('/playergallery-admin', function () {
+    return view('playergallery-admin');
+});
+
+
+Route::get('/matches-admin', function () {
+    return view('matches-admin');
+});
+// admin routes endpoint
 
